@@ -1,0 +1,101 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>VirusZone</title>
+
+<style>
+body {
+  background: black;
+  color: #00ff9c;
+  font-family: monospace;
+  text-align: center;
+  margin: 0;
+}
+
+/* Uyarı ekranı */
+#warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  padding: 15px 30px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.accept { background: green; color: white; }
+.decline { background: red; color: white; }
+
+#main {
+  display: none;
+  margin-top: 100px;
+}
+
+.game-btn {
+  background: #111;
+  color: #00ff9c;
+  border: 2px solid #00ff9c;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Uyarı -->
+<div id="warning">
+  <h1>⚠ UYARI ⚠</h1>
+  <p>Bu site yalnızca eğitim amaçlıdır.</p>
+  <p>Devam etmek istiyor musunuz?</p>
+
+  <button class="accept" onclick="accept()">KABUL EDİYORUM</button>
+  <button class="decline" onclick="decline()">KABUL ETMİYORUM</button>
+</div>
+
+<!-- Ana ekran -->
+<div id="main">
+  <h1>VIRUSZONE</h1>
+
+  <h2>Uygulamalar</h2>
+
+  <button class="game-btn" onclick="download('minecraft.apk')">
+    Minecraft
+  </button>
+
+  <button class="game-btn" onclick="download('fnaf2.apk')">
+    FNAF 2
+  </button>
+</div>
+
+<script>
+function accept(){
+  document.getElementById("warning").style.display="none";
+  document.getElementById("main").style.display="block";
+}
+
+function decline(){
+  alert("Site kapatılıyor");
+  window.close();
+}
+
+function download(file){
+  window.location.href = file;
+}
+</script>
+
+</body>
+</html>
+```
