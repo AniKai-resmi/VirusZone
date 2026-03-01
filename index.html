@@ -1,101 +1,96 @@
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>VirusZone</title>
+<title>FNAF 1</title>
 
 <style>
-body {
-  background: black;
-  color: #00ff9c;
-  font-family: monospace;
-  text-align: center;
-  margin: 0;
+body{
+    background:#0b0b0b;
+    font-family:Arial;
+    color:white;
+    text-align:center;
+    margin:0;
 }
 
-/* Uyarı ekranı */
-#warning {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.kutu{
+    margin-top:100px;
+    background:#111;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 0 30px red;
+    display:inline-block;
 }
 
-button {
-  padding: 15px 30px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
+button{
+    background:red;
+    border:none;
+    padding:15px 30px;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.accept { background: green; color: white; }
-.decline { background: red; color: white; }
-
-#main {
-  display: none;
-  margin-top: 100px;
+button:hover{
+    background:darkred;
+    transform:scale(1.1);
 }
 
-.game-btn {
-  background: #111;
-  color: #00ff9c;
-  border: 2px solid #00ff9c;
+#uyari{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+}
+
+.uyari-kutu{
+    background:#111;
+    padding:40px;
+    border:2px solid red;
+    border-radius:15px;
+    box-shadow:0 0 40px red;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Uyarı -->
-<div id="warning">
-  <h1>⚠ UYARI ⚠</h1>
-  <p>Bu site yalnızca eğitim amaçlıdır.</p>
-  <p>Devam etmek istiyor musunuz?</p>
-
-  <button class="accept" onclick="accept()">KABUL EDİYORUM</button>
-  <button class="decline" onclick="decline()">KABUL ETMİYORUM</button>
+<div class="kutu">
+    <h1>FNAF 1 REW</h1>
+    <p>İndirmek için butona bas</p>
+    <button onclick="uyariAc()">İndir</button>
 </div>
 
-<!-- Ana ekran -->
-<div id="main">
-  <h1>VIRUSZONE</h1>
-
-  <h2>Uygulamalar</h2>
-
-  <button class="game-btn" onclick="download('minecraft.apk')">
-    Minecraft
-  </button>
-
-  <button class="game-btn" onclick="download('fnaf2.apk')">
-    FNAF 2
-  </button>
+<div id="uyari">
+    <div class="uyari-kutu">
+        <h2>⚠️ UYARI</h2>
+        <p>Bu APK virüslü olabilir.</p>
+        <br>
+        <button onclick="indir()">Eminim</button>
+        <button onclick="kapat()">Hayır</button>
+    </div>
 </div>
 
 <script>
-function accept(){
-  document.getElementById("warning").style.display="none";
-  document.getElementById("main").style.display="block";
+function uyariAc(){
+    document.getElementById("uyari").style.display="flex";
 }
 
-function decline(){
-  alert("Site kapatılıyor");
-  window.close();
+function kapat(){
+    document.getElementById("uyari").style.display="none";
 }
 
-function download(file){
-  window.location.href = file;
+function indir(){
+    window.location.href="https://www.dropbox.com/scl/fi/4wexis77t8ltcmmjv7dw8/five-nights-at-freddys-1-84.apk?dl=1";
 }
 </script>
 
 </body>
 </html>
-```
