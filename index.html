@@ -10,12 +10,21 @@ body{
     font-family:Arial;
     text-align:center;
     color:#00ffcc;
+    margin:0;
 }
 
-.kutu{
+/* Ortak kutu */
+.ekran{
+    display:none;
     margin-top:150px;
 }
 
+/* Aktif ekran */
+.aktif{
+    display:block;
+}
+
+/* Butonlar */
 button{
     background:black;
     border:2px solid #00ffcc;
@@ -36,18 +45,79 @@ button:hover{
 
 <body>
 
-<div class="kutu">
+<!-- UYARI EKRANI -->
+<div id="uyari" class="ekran aktif">
+    <h1>⚠ UYARI ⚠</h1>
+    <p>Bu site yalnızca eğitim amaçlıdır.</p>
+    <p>Devam etmek istiyor musunuz?</p>
+    <br>
+    <button onclick="menuAc()">KABUL EDİYORUM</button>
+    <button onclick="window.close()">KABUL ETMİYORUM</button>
+</div>
+
+<!-- ANA MENÜ -->
+<div id="menu" class="ekran">
     <h1>VIRUSZONE</h1>
     <h2>Uygulamalar</h2>
-
-    <br><br>
-
-    <button>Minecraft</button>
-    <button onclick="window.location.href='fnaf1.html'">FNAF 1</button>
-
-    <br><br>
-    ...
+    <br>
+    <button onclick="fnafAc()">FNAF 1</button>
 </div>
+
+<!-- FNAF İNDİRME EKRANI -->
+<div id="fnaf" class="ekran">
+    <h1>FNAF 1</h1>
+    <p>İndirmek için devam et</p>
+    <br>
+    <button onclick="apkUyari()">İNDİR</button>
+    <br><br>
+    <button onclick="geriMenu()">GERİ</button>
+</div>
+
+<!-- APK UYARI -->
+<div id="apkuyari" class="ekran">
+    <h1>⚠ UYARI ⚠</h1>
+    <p>Bu APK virüslü olabilir</p>
+    <br>
+    <button onclick="indir()">EMİNİM</button>
+    <button onclick="geriFnaf()">HAYIR</button>
+</div>
+
+<script>
+
+function temizle(){
+    document.querySelectorAll(".ekran").forEach(e=>e.classList.remove("aktif"));
+}
+
+function menuAc(){
+    temizle();
+    document.getElementById("menu").classList.add("aktif");
+}
+
+function fnafAc(){
+    temizle();
+    document.getElementById("fnaf").classList.add("aktif");
+}
+
+function geriMenu(){
+    temizle();
+    document.getElementById("menu").classList.add("aktif");
+}
+
+function apkUyari(){
+    temizle();
+    document.getElementById("apkuyari").classList.add("aktif");
+}
+
+function geriFnaf(){
+    temizle();
+    document.getElementById("fnaf").classList.add("aktif");
+}
+
+function indir(){
+    window.location.href="https://www.dropbox.com/scl/fi/4wexis77t8ltcmmjv7dw8/five-nights-at-freddys-1-84.apk?dl=1";
+}
+
+</script>
 
 </body>
 </html>
