@@ -2,138 +2,52 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>VirusZone</title>
+<title>VIRUSZONE</title>
 
 <style>
 body{
-    background:#0b0b0b;
-    font-family:Arial;
-    color:white;
-    text-align:center;
-    margin:0;
-}
-
-h1{
-    margin-top:50px;
-}
-
-/* Oyun kutusu */
-
-.oyun{
-    background:#111;
-    padding:30px;
-    margin:20px;
-    border-radius:15px;
-    box-shadow:0 0 20px red;
-    display:inline-block;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.oyun:hover{
-    transform:scale(1.1);
-}
-
-/* Popup */
-
-.popup{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
     background:black;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-/* Uyarı */
-
-.uyari{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+    font-family:Arial;
+    text-align:center;
+    color:#00ffcc;
 }
 
 .kutu{
-    background:#111;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 0 40px red;
+    margin-top:150px;
 }
 
 button{
-    background:red;
-    border:none;
-    padding:15px 30px;
-    color:white;
+    background:black;
+    border:2px solid #00ffcc;
+    padding:15px 40px;
+    color:#00ffcc;
     font-size:18px;
-    border-radius:10px;
     cursor:pointer;
     margin:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00ffcc;
+    color:black;
 }
 </style>
 </head>
 
 <body>
 
-<h1>VirusZone</h1>
+<div class="kutu">
+    <h1>VIRUSZONE</h1>
+    <h2>Uygulamalar</h2>
 
-<!-- Oyun -->
-<div class="oyun" onclick="fnafAc()">
-    🎮 FNAF 1
+    <br><br>
+
+    <button>Minecraft</button>
+    <button onclick="window.location.href='fnaf1.html'">FNAF 1</button>
+
+    <br><br>
+    ...
 </div>
-
-<!-- FNAF Popup -->
-<div id="fnafPopup" class="popup">
-    <div class="kutu">
-        <h2>FNAF 1</h2>
-        <button onclick="uyariAc()">İndir</button>
-        <br>
-        <button onclick="fnafKapat()">Geri</button>
-    </div>
-</div>
-
-<!-- Uyarı -->
-<div id="uyari" class="uyari">
-    <div class="kutu">
-        <h2>⚠️ UYARI</h2>
-        <p>Bu APK virüslü olabilir.</p>
-        <button onclick="indir()">Eminim</button>
-        <button onclick="uyariKapat()">Hayır</button>
-    </div>
-</div>
-
-<script>
-function fnafAc(){
-    document.getElementById("fnafPopup").style.display="flex";
-}
-
-function fnafKapat(){
-    document.getElementById("fnafPopup").style.display="none";
-}
-
-function uyariAc(){
-    document.getElementById("uyari").style.display="flex";
-}
-
-function uyariKapat(){
-    document.getElementById("uyari").style.display="none";
-}
-
-function indir(){
-    window.location.href="https://www.dropbox.com/scl/fi/4wexis77t8ltcmmjv7dw8/five-nights-at-freddys-1-84.apk?dl=1";
-}
-</script>
 
 </body>
 </html>
